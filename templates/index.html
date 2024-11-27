@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Maker</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='files/fav.png') }}" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Updated to use url_for to serve CSS from static folder with type="text/css" -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/indexMobile.css') }}">
+
+    <meta name="description"
+        content="Create professional resumes online with ease using our resume builder tool. Simple, quick, and free.">
+    <meta name="keywords"
+        content="resume builder, online resume maker, free resume builder, create resume online, professional resume tool, CV builder">
+    <meta name="author" content="Shivam Dhamejani">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Resume Maker - Build Your Professional Resume Online for free">
+    <meta property="og:description"
+        content="Create your perfect resume online with our simple and free resume builder tool. Get hired faster!">
+    <!-- <meta property="og:image" content="URL to an image representing your website (optional)"> -->
+    <!-- <meta property="og:url" content="https://yourdomain.com"> -->
+</head>
+
+<body>
+
+    <header>
+        <div class="header">
+            <h1>Resume Builder</h1>
+            <p>Get hired fast with our awesome resume</p>
+        </div>
+    </header>
+
+    <section class="smallNav">
+        <div class="leftNav">
+            <!-- Update the image src using url_for -->
+            <img src="{{ url_for('static', filename='files/a.jpg') }}" alt="Logo">
+        </div>
+        <div class="rightNav">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dhamejanishivam@gmail.com&su=Resume Website&body=Hey, I just saw your Resume Builder website and I wanted to say that&cc=shivam9644971120@gmail.com"
+                target="_blank">Contact Us</a>
+        </div>
+    </section>
+
+    <main class="main1">
+        <section class="bodySection">
+            <div class="leftbody">
+                <h2>Build Your Dream Resume</h2>
+                <p>Create a professional resume effortlessly with our easy-to-use builder <strong>for free</strong> . 
+                    Impress employers and land your dream job in no time!</p>
+                <button onclick="scrollToSection('main2')">Get Started</button>
+            </div>
+            <div class="rightBody">
+                <!-- Update the image srcset using url_for -->
+                <img srcset="{{ url_for('static', filename='files/resume.jpg') }} 1x, {{ url_for('static', filename='files/resume@2x.jpg') }} 2x" alt="Sample Resume">
+            </div>
+        </section>
+    </main>
+
+    <main class="main2" id="main2">
+        <h2>Choose a Template</h2>
+        <div class="alltemplates">
+            <!-- Updated template image sources using url_for -->
+            <div class="template-card" onclick="selectTemplate(1)"> <img src="{{ url_for('static', filename='files/resumeTemplate1.webp') }}" alt=""> </div>
+            <div class="template-card" onclick="selectTemplate(2)"> <img src="{{ url_for('static', filename='files/resumeTemplate2.png') }}" alt=""> </div>
+            <div class="template-card" onclick="selectTemplate(3)"> <img src="{{ url_for('static', filename='files/resumeTemplate3.png') }}" alt=""> </div>
+        </div>
+        <span id="moreTemplates">More templates coming soon...</span>
+        <div class="submitbtn">
+            <button onclick="nextPage()" id="btn1">Start Making Resume</button>
+        </div>
+    </main>
+
+    <div class="alert-box" id="alert-box">
+        <div class="alert-text" id="alert-text"></div>
+        <button class="alert-button">Ok</button>
+    </div>
+
+    <footer>
+        <div class="footer" id="footer">
+            <h3>&#169; Shivam Dhamejani</h3>
+            <p>Connect with me:</p>
+            <a href="https://github.com/dhamejanishivam" target="_blank">GitHub</a> |
+            <a href="https://www.linkedin.com/in/shivam-dhamejani-66b461245/" target="_blank">LinkedIn</a> |
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dhamejanishivam@gmail.com&su=Resume Website&body=Hey, I just saw your resume website and I wanted to say hi, &cc=shivam9644971120@gmail.com"
+                target="_blank">Email Me</a>
+        </div>
+    </footer>
+
+    <!-- Updated script src to use url_for -->
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+
+</body>
+
+</html>

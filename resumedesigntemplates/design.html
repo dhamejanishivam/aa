@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            margin: 30px auto;
+            max-width: 800px;
+            border: 1px solid #000;
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 24px;
+        }
+        .header p {
+            margin: 5px 0;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            border-bottom: 2px solid #000;
+            margin-bottom: 10px;
+        }
+        .details {
+            margin-left: 20px;
+        }
+        .list {
+            list-style-type: disc;
+            margin-left: 40px;
+        }
+        .two-column {
+            display: flex;
+            justify-content: space-between;
+        }
+        .column {
+            width: 48%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>{{ name }}</h1>
+            <p>{{ email }} | {{ phone }} | {{ location }}</p>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Objective</div>
+            <p>{{ objective }}</p>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Work Experience</div>
+            {% for experience in work_experience %}
+            <div class="details">
+                <strong>{{ experience.title }}</strong> - {{ experience.company }} ({{ experience.duration }})
+                <p>{{ experience.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="section">
+            <div class="section-title">Education</div>
+            {% for education in education %}
+            <div class="details">
+                <strong>{{ education.degree }}</strong> <br>, {{ education.institution }} ({{ education.year }})
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="section">
+            <div class="section-title">Projects</div>
+            <ul class="list">
+                {% for project in projects %}
+                <li><a href="{{ project }}">{{ project }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Skills</div>
+            <ul class="list">
+                {% for skill in skills %}
+                <li>{{ skill }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Additional Details</div>
+            <ul class="list">
+                {% for detail in additional_details %}
+                <li>{{ detail }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

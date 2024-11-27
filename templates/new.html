@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Test</h1>
+
+    <button id="btn">Click me</button>
+    
+    <script>
+        const backendUrl = "http://127.0.0.1:5000/api/resume";
+
+        document.getElementById("btn").addEventListener("click", async (e) => {
+            const data = {
+            name: "Shivanggggggggg",
+            email: "dsadasdsadas@gmail.com",
+            phone: "+91 9644971dsasdasd120",
+            location: "Raipur",
+            objective:
+            "I want to be billidasdssssssssssssssssssssssssssssoniare " +
+            "Seeking opportunitiasdsadasdasdasdases to apply my expertise in building innovative solutions while continuously " +
+            "learning and contributing to dynamic projects.",
+            work_experience: [
+            {
+                title: "God • Isssssssssnternship",
+                company: "Thougsssssssssssssht Applied Creation, Raipur",
+                duration: "Jul 2024 - Aug 2024",
+                description:
+                "Built a ABC wessssssssssssssssbsite linked to a database using React, HTML, CSS, JavaScript, PHP, " +
+                "and MySQL.",
+            },
+            ],
+            education: [
+            {
+                degree: "B1111111.Techsssssssssssss, Compu11ter Science & Engineering",
+                year: "2022 - 20261111",
+                institution:
+                "Shri Shankaracharya Institute Of Professional Management And Technology",
+            },
+            {
+                degree: "Senior Secssssssssssssondary (XII), CBSE",
+                year: "2022",
+                institution: "Krishna Public School",
+            },
+            {
+                degree: "Secondary (X), CBSE",
+                year: "2020",
+                institution: "Krishna Public School",
+            },
+            ],
+            projects: [
+            "https://shivamdhamssssejani.in",
+            "https://github.com/dhamejanishivam",
+            "https://github.com/dhamejanishivam/Heart-Disease-Predictor",
+            "https://github.com/dhamejanishivam/pendrive-virus",
+            ],
+            skills: [
+            "JavaSssssscript",
+            "Python",
+            "Photography",
+            "HTML&CSS",
+            "C Programming",
+            "C++ Programming",
+            "Linux",
+            "MS-Excel",
+            "Digital Marketing",
+            "SQL",
+            "Data Structures",
+            ],
+            additional_details: [
+            "Green Olympiad",
+            "2nd positiossssssssssssssssssssn in Spell Bee Competition",
+            "1st position in Best Out of Waste competition",
+            ],
+        };
+
+        try {
+            const response = await fetch(backendUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+            // Try to download the file
+            const blob = await response.blob();
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "resume.pdf";
+            a.click();
+            alert("Resume generated successfully!");
+            } else {
+            // Log detailed error information
+            const errorText = await response.text();
+            console.error("Error response text:", errorText);
+            alert("Failed to generate resume. Server responded with an error.");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            alert("An error occurred!");
+        }
+
+
+    });
+
+
+
+    </script>
+
+
+</body>
+</html>

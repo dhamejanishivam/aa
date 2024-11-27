@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        /* body{
+            font-size: 5px;
+        } */
+
+        .container{
+            /* border: 2px solid black; */
+            margin: auto;
+            margin-left: 300px;
+            /* width: max-content; */
+            width: 705px;
+            height: max-content;
+            margin: 20px auto;
+
+            display: flex;
+        }
+
+        .leftSection{
+            width: 30%;
+            background: rgb(88, 88, 88) ;
+            padding-left: 20px;
+        }
+
+        .leftSection .contactSection{
+            margin-top: 100px;
+            padding:0 4px;
+        }
+        .leftSection .contactSection .contactTitle{
+            color: rgb(211, 211, 211);
+            color: rgb(228, 226, 226);
+            font-size: 2rem;
+            font-weight: bolder;
+            margin-bottom: 20px;
+        }
+        .leftSection .contactSection .contactTitle::before{
+            display: block;
+            position: relative;
+            content: " ";
+            top: 30px;
+            left: 0;
+            width: 50%;
+            border-bottom: 2px solid rgb(150, 150, 150);
+        }
+        
+        .contact-details{
+            color: rgb(197, 197, 197);
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+
+
+        .leftSection .skillsSection .skillstitle{
+            color: rgb(211, 211, 211);
+            color: rgb(228, 226, 226);
+            font-size: 2rem;
+            font-weight: bolder;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+        .leftSection .skillsSection .skillstitle::before{
+            display: block;
+            position: relative;
+            content: " ";
+            top: 30px;
+            left: 0;
+            width: 50%;
+            border-bottom: 2px solid rgb(150, 150, 150);
+        }
+        .leftSection .skillsSection ul li{
+            color: rgb(197, 197, 197);
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+
+
+
+        .leftSection .additional .additionaltitle{
+            color: rgb(211, 211, 211);
+            color: rgb(228, 226, 226);
+            font-size: 2rem;
+            font-weight: bolder;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+        .leftSection .additional .additionaltitle::before{
+            display: block;
+            position: relative;
+            content: " ";
+            top: 30px;
+            left: 0;
+            width: 90%;
+            border-bottom: 2px solid rgb(150, 150, 150);
+        }
+        .leftSection .additional ul li{
+            color: rgb(197, 197, 197);
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+
+
+
+
+        .rightSection{
+            width: 100%;
+            margin-left: 80px;
+            margin-right: 80px;
+        }
+
+        .name{
+            margin-top: 20px;
+        }
+        .name h1{
+            font-size: 2.1rem;
+            color: rgb(87, 86, 86);
+        }
+        
+        .line1{
+            margin-top: 2px;
+        }
+        
+
+
+
+        .objective{
+            margin-top: 20px;
+        }
+        .objectivetitle{
+            font-size: 1.2rem;
+            font-weight: bolder;
+            color: rgb(66, 66, 66);
+            margin-bottom: 20px;
+        }
+        .objectivetitle::before{
+            position: relative;
+            content: " ";
+            display: block;
+            margin-left: 79.8px;
+            margin-right: 25px;
+            top: 14px;
+            border-bottom: 3.5px solid gray;
+        }
+        .objectivebody p{
+            font-size: 1rem;
+            color: rgb(83, 83, 83);
+            margin-top: 10px;
+            margin-left: 2px;
+        }
+
+
+
+        .education{
+            margin-top: 40px;
+        }
+        .educationtitle{
+            font-size: 1.2rem;
+            font-weight: bolder;
+            color: rgb(66, 66, 66);
+        }
+        .educationtitle::before{
+            position: relative;
+            content: " ";
+            display: block;
+            margin-left: 84.8px;
+            margin-right: 25px;
+            top: 14px;
+            border-bottom: 3.5px solid gray;
+        }
+        .educationdetails .degree{
+            margin-top: 10px;
+        }
+        .educationdetails .degree .degreeName{
+            display: inline-block;
+            color: rgb(78, 78, 78);
+            font-size:1rem;
+            font-weight:bold;
+            text-align:left;
+        }
+        .educationdetails .degree .degreeduration{
+            display: inline-block;
+            color: rgb(82, 82, 82);
+            margin-left: 20px;
+            font-style: italic;
+        }
+        .institutionName{
+            margin-top: 5px;
+            font-size: 0.9rem;
+
+        }
+
+
+        .work{
+            margin-top: 40px;
+        }
+        .worktitle{
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-weight: bolder;
+            color: rgb(66, 66, 66);
+            margin-bottom: 20px;
+        }
+        .worktitle::before{
+            position: relative;
+            content: " ";
+            display: block;
+            margin-left: 145px;
+            margin-right: 25px;
+            top: 14px;
+            border-bottom: 3.5px solid gray;
+        }
+        .workdetails .experince{
+            margin-top: 10px;
+        }
+        .workdetails .experince .workName{
+            display: inline-block;
+            color: rgb(66, 66, 66);
+            font-size:1rem;
+            font-weight:bold;
+            text-align:left;
+        }
+        .workdetails .experince .workduration{
+            display: inline-block;
+            color: gray;
+            margin-left: 20px;
+            font-style: italic;
+        }
+        .workinstitutionName{
+            margin-top: 5px;
+            font-size: 1rem;
+        }
+        .workDescription{
+            color: rgb(94, 93, 93);
+            margin-top: 2px;
+            font-size: 0.9rem;
+        }
+
+
+
+        .projects{
+            margin-top: 30px;
+        }
+        .projectTitle{
+            font-size: 1.2rem;
+            font-weight: bolder;
+            /* color: rgb(114, 114, 114); */
+            color: rgb(66, 66, 66);
+            margin-bottom: 20mm;
+        }
+        .projectTitle::before{
+            position: relative;
+            content: " ";
+            display: block;
+            margin-left: 72px;
+            margin-right: 25px;
+            top: 14px;
+            border-bottom: 3.5px solid gray;
+        }
+        .projects .projectName{
+            color: rgb(66, 66, 66);
+            font-size:1rem;
+            font-weight:bold;
+            text-align:left;
+        }
+        .projects a{
+            font-size: 0.9rem;
+        }
+        .projects .projectDesc{
+            color: rgb(94, 93, 93);
+            margin-top: 2px;
+            font-size: 0.9rem;
+        }
+        .list {
+            list-style-type: disc;
+        }
+        .projects #projectlist2{
+            margin-top: 10px;
+        }
+        
+
+        @page {
+            /* size: A4 !important; Options: A4, Letter, etc., or custom like "8.5in 11in" */
+            margin: 0mm !important; /* Adjust margins (top, right, bottom, left) */
+        }
+
+        .container {
+            width: 209mm !important; 
+            margin: 0 0 !important;
+            /* height: 250mm !important; */
+            height: 9in;
+            /* margin-top: 0mm !important; */
+            /* margin: auto 0; */
+        }
+        body {
+            overflow: hidden;
+            word-wrap: break-word;
+        }
+        @page {
+           size: 8.25in 9in; /* Letter size */
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <!-- left : contact,skills,additional -->
+     <!-- right education,work,projects -->
+
+    <div class="container">
+
+
+        <div class="leftSection">
+
+            <div class="contactSection">
+                <div class="contactTitle"><h5>Contact</h5></div>
+                <div class="email contact-details">{{ email }}</div>
+                <div class="phone contact-details"> {{ phone }}</div>
+                <div class="location contact-details">{{ location }}</div>
+                <!-- <div class="email contact-details">dhamejanishivam@gmail.com</div>
+                <div class="phone contact-details">+91 9644971120</div>
+                <div class="location contact-details">Raipur</div> -->
+
+            </div>
+
+
+
+            <div class="skillsSection">
+                <div class="skillstitle"><h5>Skills</h5></div>
+                <ul class="list">
+                    {% for skill in skills %}
+                    <li>{{ skill }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+
+            <div class="additional">
+                <div class="additionaltitle"><h5>Achievements</h5></div>
+                <ul class="list">
+                    {% for detail in additional_details %}
+                        <li>{{ detail }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+        </div>
+
+
+        <div class="rightSection">
+            <div class="header">
+                <!-- <div class="name"><h1>{{ name }}</h1></div> -->
+                <div class="name"><h1>{{ name }}</h1></div>
+            </div>
+
+            <hr class="line1">
+
+
+            <div class="objective">
+
+                <span class="objectivetitle">Objective</span>
+                <br>
+                <div class="objectivebody">
+                    <p>{{ objective }}</p>
+                </div>
+                
+            </div>
+            
+            
+            <div class="education">
+                <span class="educationtitle">Education</span>
+                <br>
+                <div class="educationdetails">
+                    {% for education in education %}
+                    <div class="degree">
+                        <span class="degreeName">{{ education.degree }}</span>
+                        <div class="degreeduration">{{ education.year }}</div>
+                        <div class="institutionName">{{ education.institution }}</div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+
+
+
+            <div class="work">
+                <span class="worktitle">Work Experience</span>
+                <br>
+                <div class="workdetails">
+                    {% for experience in work_experience  %}
+                    <div class="experince">
+                        <span class="workName">{{ experience.title }}</span>
+                        <div class="workduration">{{ experience.duration }}</div>
+                        <div class="workinstitutionName">{{ experience.company }}</div>
+                        <p class="workDescription">{{ experience.description }}</p>
+                    </div>
+                    {% endfor %}
+
+                </div>
+
+
+                <div class="projects">
+                    <span class="projectTitle">Projects</span>
+                    <br><br>
+                    {% for project in projects %}
+                        <div class="projectSection">
+                            <div class="projectName">{{ project.projectName }}</div>
+                            <a style="text-decoration: none;" target="_blank" href="{{ project.projectLink }}">{{ project.projectLink }}</a>
+                            <p class="projectDesc">{{ project.projectDesc }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+                
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    
+</body>
+</html>

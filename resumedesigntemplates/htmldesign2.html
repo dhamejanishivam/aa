@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATS-Friendly Resume</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    .resume-container {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 10px;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    h2 {
+      font-size: 20px;
+      border-bottom: 2px solid #0073e6;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin: 5px 0;
+    }
+
+    .contact-info {
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .contact-info span {
+      display: block;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      background: #0073e6;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li {
+      padding: 5px 0;
+    }
+
+    .experience, .education {
+      margin-bottom: 20px;
+    }
+
+    .experience .job-title, .education .degree {
+      font-weight: bold;
+      color: #0073e6;
+    }
+
+    .experience .company, .education .institution {
+      color: #333;
+    }
+
+    .experience .date, .education .date {
+      font-size: 12px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+    <h1>Your Score
+        82/100
+     in enhancecv.com</h1>
+
+  <div class="resume-container">
+    <header class="section">
+      <h1>John Doe</h1>
+      <div class="contact-info">
+        <span>Email: john.doe@example.com</span>
+        <span>Phone: +1 234 567 890</span>
+        <span>LinkedIn: linkedin.com/in/johndoe</span>
+        <span>Portfolio: johndoe.dev</span>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>Summary</h2>
+      <p>Results-driven software engineer with 5+ years of experience in developing scalable web applications. Proficient in Python, JavaScript, and cloud technologies, with a passion for delivering high-quality solutions to meet client needs.</p>
+    </section>
+
+    <section class="section experience">
+      <h2>Work Experience</h2>
+      <div>
+        <span class="job-title">Senior Software Engineer</span> at <span class="company">TechCorp Inc.</span>
+        <span class="date">Jan 2020 - Present</span>
+        <ul>
+          <li>Led a team of 5 developers to build a SaaS application that increased client productivity by 40%.</li>
+          <li>Implemented scalable APIs and optimized database queries, reducing response time by 30%.</li>
+        </ul>
+      </div>
+      <div>
+        <span class="job-title">Software Developer</span> at <span class="company">CodeWorks</span>
+        <span class="date">Jun 2017 - Dec 2019</span>
+        <ul>
+          <li>Developed an e-commerce platform using Django and React, which generated $2M in annual revenue.</li>
+          <li>Collaborated with cross-functional teams to deliver projects on time and within budget.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section education">
+      <h2>Education</h2>
+      <div>
+        <span class="degree">Bachelor of Science in Computer Science</span> - <span class="institution">University of Innovation</span>
+        <span class="date">2013 - 2017</span>
+      </div>
+    </section>
+
+    <section class="section skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div class="skill">Python</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">Django</div>
+        <div class="skill">React</div>
+        <div class="skill">REST APIs</div>
+        <div class="skill">AWS</div>
+        <div class="skill">SQL</div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

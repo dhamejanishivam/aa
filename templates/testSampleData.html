@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Resume</title>
+</head>
+<body>
+  Hi
+  <br>
+    <button id="submitButton">Submit Resume</button>
+    <div id="responseMessage"></div>
+
+    <script>
+      // let backendUrl = "https://6ef5-45-124-144-227.ngrok-free.app/api/resume";
+      let backendUrl = "http://127.0.0.1:5000/api/resume";
+      
+      let data23 = {
+  name: "xyz",
+  email: "random123@gmail.com",
+  phone: "+91 9876543210",
+  location: "Mumbai",
+  objective:
+    "Aspiring to excel in the tech industry " +
+    "while consistently enhancing my skills and contributing to transformative projects.",
+  work_experience: [
+    {
+      title: "Developer Intern",
+      company: "Innovate Tech Solutions, Bangalore",
+      duration: "May 2023 - Sep 2023",
+      description:
+        "Developed and maintained an e-commerce platform using Node.js, React, and MongoDB.",
+    },
+  ],
+  education: [
+    {
+      degree: "B.Sc, Information Technology",
+      year: "2021 - 2025",
+      institution: "Techno International College of Sciences",
+    },
+    {
+      degree: "Senior Secondary (XII), State Board",
+      year: "2021",
+      institution: "Springfield High School",
+    },
+    {
+      degree: "Secondary (X), State Board",
+      year: "2019",
+      institution: "Bright Future Academy",
+    },
+  ],
+  projects: [
+    {
+      projectName: "Weather App",
+      projectLink: "github.com/weatherapp",
+      projectDesc:
+        "Developed a weather forecasting application using APIs and modern UI frameworks.",
+    },
+  ],
+  skills: [
+    "Java",
+    "Python",
+    "Photo Editing",
+    "React.js",
+    "Ruby",
+    "Docker",
+    "Shell Scripting",
+    "MS Access",
+    "Content Writing",
+    "NoSQL",
+    "Algorithms",
+  ],
+  additional_details: [
+    "Bronze Medal in Mathematics Olympiad",
+    "3rd position in Robotics Competition",
+    "Winner of Creative Writing Contest",
+  ],
+  'selectedTemplateId':'1'
+};
+
+
+        
+
+        async function submitResume(data) {
+    try {
+        const response = await fetch(backendUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+        });
+
+        if (response.ok) {
+            // Handle successful response and trigger the file download
+            const blob = await response.blob();
+            const url = window.URL.createObjectURL(blob);
+
+            // Create an anchor element to trigger the download
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "resume.pdf";  // Filename for the download
+
+            // Trigger the download by clicking the anchor tag
+            a.click();
+
+            // Clean up the URL object after the download
+            window.URL.revokeObjectURL(url);
+            alert("Resume is being downloaded...");
+        } else {
+            const errorText = await response.text();
+            console.error("Error response text:", errorText);
+            alert("Failed to generate resume.");
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        alert("An error occurred while generating the resume!");
+    }
+}
+
+
+        // Event listener for the button
+        document.getElementById('submitButton').addEventListener('click', () => {
+            submitResume(data23);
+        });
+    </script>
+</body>
+</html>
