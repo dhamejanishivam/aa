@@ -6,7 +6,7 @@ from flask import render_template
 
 import maker  # Ensure maker.py is in the same directory
 import maker1
-import maker2
+# import maker2
 import send_details
 # import save_data
 
@@ -22,7 +22,8 @@ dataPassword = 'IamIronMan_3000'
 app = Flask(__name__)
 
 # Allow CORS for specific origin or all origins (*)
-CORS(app, resources={r"/api/*": {"origins": ["http://127.0.0.1:5500","http://localhost:5500", "https://dhamejanishivam.github.io"]}})
+# CORS(app, resources={r"/api/*": {"origins": ["http://127.0.0.1:5500","http://localhost:5500", "https://dhamejanishivam.github.io"]}})
+CORS(app)
 
 # CORS(app, resources={r"/api/*": {"origins": "*"}})
 
@@ -126,7 +127,7 @@ def makeResume(data):
         obj = maker2.Main(data1=data)
 
 
-    pdf_path = f"resumeFiles\\{data['name']}_resume.pdf"
+    pdf_path = f"resumeFiles//{data['name']}_resume.pdf"
     pdfName = f"{data['name']}_resume.pdf"
     return pdf_path  # Example path
 
@@ -139,28 +140,28 @@ def save_to_json(data):
     print("Data saved succesfully to mysql")
 
     # Define the filename for storing resumes
-    # filename = 'resumeData.json'
+    filename = 'resumeData.json'
     
-    # # Check if the file exists
-    # if os.path.exists(filename):
-    #     # Read the existing data
-    #     with open(filename, 'r') as f:
-    #         try:
-    #             # Load existing data
-    #             existing_data = json.load(f)
-    #         except json.JSONDecodeError:
-    #             # If file is empty or has invalid JSON, start with an empty list
-    #             existing_data = []
-    # else:
-    #     # If the file doesn't exist, start with an empty list
-    #     existing_data = []
+    # Check if the file exists
+    if os.path.exists(filename):
+        # Read the existing data
+        with open(filename, 'r') as f:
+            try:
+                # Load existing data
+                existing_data = json.load(f)
+            except json.JSONDecodeError:
+                # If file is empty or has invalid JSON, start with an empty list
+                existing_data = []
+    else:
+        # If the file doesn't exist, start with an empty list
+        existing_data = []
 
-    # # Append the new data to the existing data
-    # existing_data.append(data)
+    # Append the new data to the existing data
+    existing_data.append(data)
 
-    # # Write the updated data back to the JSON file
-    # with open(filename, 'w') as f:
-    #     json.dump(existing_data, f, indent=4)  # Use indent for pretty printing
+    # Write the updated data back to the JSON file
+    with open(filename, 'w') as f:
+        json.dump(existing_data, f, indent=4)  # Use indent for pretty printing
 
 
     # Sending details via message
@@ -178,7 +179,6 @@ def receive_resume():
         resumePath = makeResume(data)
         print("Sending resume file : ",resumePath)
         return send_file(resumePath, as_attachment=True, download_name=resumePath), 200
-        # return "Done", 200
     except Exception as e:
         print("Error generating resume:", e)
         # return jsonify({"error": "Failed to generate resume"}), 500
